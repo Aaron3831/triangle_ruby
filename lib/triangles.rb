@@ -38,4 +38,10 @@ class Triangle
     @length2.!=(@length1)
     @length2.!=(@length3)
   end
+
+  define_method(:scalene?) do
+  @length1.!=(@length2)
+  @length3.!=(@length2)
+  @length1.!=(@length3)
+  end
 end

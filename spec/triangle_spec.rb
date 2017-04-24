@@ -22,4 +22,12 @@ describe('triangles') do
     new_triangle = Triangle.new(5, 6, 5)
     expect(new_triangle.isosceles3?()).to(eq(true))
   end
+  it("it will check if none of the sides are equal")  do
+    new_triangle = Triangle.new(5, 6, 7)
+    expect(new_triangle.scalene?()).to(eq(true))
+  end
+  it("it will check if none of the sides are equal")  do
+    new_triangle = Triangle.new(5, 6, 7)
+    expect(new_triangle.scalene?()).to(eq(true))
+  end
 end
