@@ -26,8 +26,8 @@ describe('triangles') do
     new_triangle = Triangle.new(5, 6, 7)
     expect(new_triangle.scalene?()).to(eq(true))
   end
-  it("it will check if none of the sides are equal")  do
-    new_triangle = Triangle.new(5, 6, 7)
-    expect(new_triangle.scalene?()).to(eq(true))
+  it("it will check if the sum of the lengths of any two sides of a triangle is less than or equal to the length of the third side")  do
+    new_triangle = Triangle.new(3, 3, 6)
+    expect(new_triangle.not_a_triangle?()).to(eq(true))
   end
 end
