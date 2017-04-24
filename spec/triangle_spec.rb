@@ -12,15 +12,15 @@ describe('triangles') do
   end
   it("it will check if a triangle is an isosceles with length1 and length2 being equal")  do
     new_triangle = Triangle.new(5, 5, 6)
-    expect(new_triangle.isosceles1?()).to(eq(true))
+    expect(new_triangle.isosceles?()).to(eq(true))
   end
   it("it will check if a triangle is an isosceles with length2 and length3 being equal")  do
     new_triangle = Triangle.new(6, 5, 5)
-    expect(new_triangle.isosceles2?()).to(eq(true))
+    expect(new_triangle.isosceles?()).to(eq(true))
   end
   it("it will check if a triangle is an isosceles with length1 and length3 being equal")  do
     new_triangle = Triangle.new(5, 6, 5)
-    expect(new_triangle.isosceles3?()).to(eq(true))
+    expect(new_triangle.isosceles?()).to(eq(true))
   end
   it("it will check if none of the sides are equal")  do
     new_triangle = Triangle.new(5, 6, 7)
@@ -28,6 +28,14 @@ describe('triangles') do
   end
   it("it will check if the sum of the lengths of any two sides of a triangle is less than or equal to the length of the third side")  do
     new_triangle = Triangle.new(3, 3, 6)
+    expect(new_triangle.not_a_triangle?()).to(eq(true))
+  end
+  it("it will check if the sum of the lengths of any two sides of a triangle is less than or equal to the length of the third side")  do
+    new_triangle = Triangle.new(3, 6, 3)
+    expect(new_triangle.not_a_triangle?()).to(eq(true))
+  end
+  it("it will check if the sum of the lengths of any two sides of a triangle is less than or equal to the length of the third side")  do
+    new_triangle = Triangle.new(6, 3, 3)
     expect(new_triangle.not_a_triangle?()).to(eq(true))
   end
 end

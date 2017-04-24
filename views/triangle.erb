@@ -1,12 +1,19 @@
 <h1>Is it a triangle?</h1>
 
-<% if @triangle.equilateral?() %>
+<h5> Length1: <%= @triangle.length1() %></h5>
+<h5> Length2: <%= @triangle.length2() %></h5>
+<h5> Length3: <%= @triangle.length3() %></h5>
+
+<% if !@triangle.not_a_triangle?() %>
+  <h2>It is NOT triangle!</h2>
+
+<% elsif @triangle.equilateral?() %>
   <h5> It is a equilateral!</h5>
-<% elsif @triangle.isosceles1?()%>
+<% elsif @triangle.isosceles?()%>
   <h5> It is an isosceles!</h5>
-<% elsif @triangle.isosceles2?()%>
+<% elsif @triangle.isosceles?()%>
   <h5> It is an isosceles!</h5>
-<% elsif @triangle.isosceles3?()%>
+<% elsif @triangle.isosceles?()%>
   <h5> It is an isosceles!</h5>
 <% elsif @triangle.scalene?()%>
   <h5> It is an scalene!</h5>
