@@ -17,8 +17,25 @@ class Triangle
     @length3
   end
 
-  define_method(:equilateral?)do
+  define_method(:equilateral?)  do
     @length1.eql?(@length2)
-    @length3.eql?(@length)
+    @length3.eql?(@length2)
+    @length1.eql?(@length3)
+  end
+
+  define_method(:isosceles1?)  do
+    @length1.eql?(@length2)
+    @length3.!=(@length1)
+    @length3.!=(@length2)
+  end
+  define_method(:isosceles2?)  do
+    @length2.eql?(@length3)
+    @length1.!=(@length2)
+    @length1.!=(@length3)
+  end
+  define_method(:isosceles3?)  do
+    @length1.eql?(@length3)
+    @length2.!=(@length1)
+    @length2.!=(@length3)
   end
 end
